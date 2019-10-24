@@ -19,8 +19,9 @@
     function loadData() {
       fetch('ajax_sample.json')
         .then(res => res.json())
-        .then(data => data.map(c => c.code))
-        .then(data => document.querySelector(".content").innerText = data);
+        .then(data => data.map(c => c.name))
+        .then(data => document.querySelector(".content").innerText = data)
+        .then(data => math.random(name));
     }
   </script>
 </body>
