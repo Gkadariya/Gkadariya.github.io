@@ -21,7 +21,15 @@
         .then(res => res.json())
         .then(data => data.map(c => c.name))
         .then(data => document.querySelector(".content").innerText = data)
-        .then(data => math.random(name));
+        {
+        for(let i = 0; i < 50; i ++){
+        const selectNumber = getRandomIntInclusive(0, 242);
+        let el = document.createElement("li");
+        el.innerText = nameArray[selectNumber];
+        content.appendChild(el);
+        };
+    }
+      
     }
   </script>
 </body>
