@@ -16,11 +16,15 @@
   </div>
   <script>
     function loadData() {
-      fetch('ajax_sample.json')
+      fetch('https://api.umd.io/v0/bus/routes')
         .then(res => res.json())
         .then(res => {
-          // you can now work in this area
-          return res;
+            myStr = ("<ul>") 
+            for (var i = 0; i < res.length; i++){
+                list = "li" + myStr[i] + "</li>"
+            }
+            console.log(list)
+        
         })
         .then(data => document.querySelector(".content").innerText = data);
     }
