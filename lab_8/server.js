@@ -46,7 +46,7 @@ app.get('/api', (req, res) => {
   fetch(baseURL)
     .then((r) => r.json())
     .then((r) => r.filter(i => i.dept_id === 'INST'))
-    .then((r) => r.map(i => i.course_id +' '+ i.name))
+    .then((r) => r.map(i => i.course_id +':'+ i.name))
     .then((data) => {
       console.log(data);
       res.send({ data: data });
